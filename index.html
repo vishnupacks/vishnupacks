@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vishnu Packs | Packaging Solutions</title>
+<title>Vishnu Packs | Smart Packaging Solutions</title>
 
 <meta name="description"
 content="Vishnu Packs - Smart packaging solutions designed to pack, protect and deliver.">
@@ -23,29 +23,33 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    color:#123c2b;
+    color:#173c2c;
     background:#ffffff;
     overflow-x:hidden;
 }
 
 :root{
     --green:#075b35;
-    --dark-green:#023c28;
-    --light-green:#0c7b42;
-    --gold:#d9a71f;
-    --lime:#c9e94d;
+    --dark-green:#023c27;
+    --light-green:#0c7542;
+    --gold:#d9a51f;
+    --lime:#c9ed3d;
     --white:#ffffff;
+    --light:#f5f8f4;
 }
 
-/* ================= NAVBAR ================= */
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     position:absolute;
     top:0;
     left:0;
     width:100%;
-    z-index:100;
-    padding:18px 5%;
+    z-index:20;
+    padding:20px 5%;
 }
 
 .nav-container{
@@ -56,10 +60,14 @@ body{
     justify-content:space-between;
 }
 
-/* BIG LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+}
 
 .logo img{
-    width:230px;
+    width:220px;
+    max-width:100%;
     height:auto;
     display:block;
 }
@@ -67,199 +75,230 @@ body{
 .nav-links{
     display:flex;
     align-items:center;
-    gap:36px;
+    gap:38px;
 }
 
 .nav-links a{
-    color:white;
+    color:#ffffff;
     text-decoration:none;
     font-size:14px;
     font-weight:bold;
     letter-spacing:1px;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--lime);
+    color:var(--gold);
 }
 
 .quote-btn{
     background:var(--gold);
     color:#123c2b !important;
-    padding:14px 25px;
+    padding:14px 27px;
     border-radius:30px;
+    font-weight:bold;
 }
 
 .quote-btn:hover{
-    background:#f0c53c;
+    background:#efc53b;
     color:#123c2b !important;
 }
 
-/* ================= HERO ================= */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
     position:relative;
     overflow:hidden;
-    display:flex;
-    align-items:center;
 
     background:
-    radial-gradient(circle at 85% 70%,rgba(116,190,45,.25),transparent 30%),
-    linear-gradient(120deg,#023c28 0%,#075b35 55%,#0c7b42 100%);
+    radial-gradient(
+        circle at 85% 30%,
+        rgba(116,190,45,.25),
+        transparent 35%
+    ),
+    linear-gradient(
+        120deg,
+        #032c1b 0%,
+        #075b35 55%,
+        #0c7542 100%
+    );
+
+    display:flex;
+    align-items:center;
 }
 
-.hero:after{
+.hero::after{
     content:"";
     position:absolute;
-    width:750px;
-    height:750px;
-    right:-230px;
+    width:700px;
+    height:700px;
+    right:-250px;
     bottom:-350px;
-    border:100px solid rgba(202,165,48,.16);
+    border:100px solid rgba(202,221,75,.10);
     border-radius:50%;
 }
 
-.hero-content{
+.hero-container{
     width:90%;
     max-width:1400px;
     margin:auto;
-    padding-top:90px;
 
-    display:flex;
+    display:grid;
+    grid-template-columns:48% 52%;
     align-items:center;
-    justify-content:space-between;
-    gap:40px;
 
     position:relative;
     z-index:2;
+
+    padding-top:100px;
 }
+
+
+/* HERO TEXT */
 
 .hero-text{
-    width:48%;
-    max-width:700px;
-    order:1;
+    padding-right:20px;
 }
 
-.small-title{
-    color:#d9a71f;
+.hero-small{
+    color:var(--gold);
     font-size:16px;
     font-weight:bold;
     letter-spacing:6px;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .hero h1{
-    color:white;
-    font-size:clamp(48px,5vw,82px);
-    line-height:.98;
-    margin-bottom:28px;
+    color:#ffffff;
+    font-size:clamp(52px,6vw,92px);
+    line-height:.95;
     font-weight:900;
+    letter-spacing:-3px;
+    margin-bottom:30px;
 }
 
 .hero h1 span{
     color:var(--lime);
+    display:block;
 }
 
 .hero-description{
-    color:white;
-    font-size:18px;
+    color:#ffffff;
+    font-size:17px;
     line-height:1.7;
-    max-width:650px;
-    margin-bottom:30px;
+    max-width:620px;
+    margin-bottom:35px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:15px;
+    gap:16px;
     flex-wrap:wrap;
 }
 
 .btn-primary{
     display:inline-block;
-    background:var(--gold);
-    color:#123c2b;
-    padding:16px 27px;
-    border-radius:30px;
     text-decoration:none;
+    background:var(--gold);
+    color:#153d2d;
+    padding:17px 30px;
+    border-radius:35px;
+    font-size:15px;
     font-weight:bold;
+    transition:.3s;
 }
 
 .btn-primary:hover{
-    background:#f0c53c;
+    transform:translateY(-3px);
+    background:#efc53b;
 }
 
 .btn-outline{
     display:inline-block;
-    border:1px solid white;
-    color:white;
-    padding:15px 27px;
-    border-radius:30px;
     text-decoration:none;
+    color:#ffffff;
+    border:1px solid #ffffff;
+    padding:16px 30px;
+    border-radius:35px;
+    font-size:15px;
     font-weight:bold;
+    transition:.3s;
 }
 
 .btn-outline:hover{
-    background:white;
+    background:#ffffff;
     color:var(--green);
 }
+
 
 /* HERO IMAGE */
 
 .hero-image{
-    width:48%;
     display:flex;
     justify-content:center;
     align-items:center;
-    order:2;
     position:relative;
-    z-index:3;
 }
 
 .hero-image img{
     width:100%;
-    max-width:650px;
+    max-width:680px;
     height:auto;
-    object-fit:contain;
     display:block;
-    filter:drop-shadow(0 30px 30px rgba(0,0,0,.25));
+
+    filter:drop-shadow(
+        0 30px 35px rgba(0,0,0,.25)
+    );
 }
+
 
 /* HERO BADGE */
 
 .hero-badge{
     position:absolute;
-    right:5%;
-    bottom:8%;
-    width:170px;
-    height:170px;
-    border-radius:50%;
+    right:2%;
+    bottom:5%;
+
+    width:155px;
+    height:155px;
+
     background:#ffffff;
+    border-radius:50%;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    z-index:5;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
 }
 
 .hero-badge strong{
-    font-size:28px;
     color:#075b35;
+    font-size:26px;
+    margin-bottom:8px;
 }
 
 .hero-badge span{
-    margin-top:7px;
-    font-size:11px;
-    letter-spacing:2px;
-    color:#345;
+    color:#52665d;
+    font-size:10px;
+    letter-spacing:3px;
 }
 
-/* ================= SECTION ================= */
+
+/* =========================
+   SECTION COMMON
+========================= */
 
 .section{
-    padding:100px 7%;
+    padding:100px 6%;
 }
 
-.section-container{
+.container{
     max-width:1250px;
     margin:auto;
 }
@@ -271,25 +310,28 @@ body{
 
 .section-title small{
     color:var(--gold);
-    font-size:14px;
-    letter-spacing:4px;
     font-weight:bold;
+    letter-spacing:4px;
+    font-size:13px;
 }
 
 .section-title h2{
-    margin-top:12px;
     font-size:45px;
     color:var(--dark-green);
+    margin-top:12px;
 }
 
 .section-title p{
     max-width:700px;
-    margin:15px auto 0;
-    color:#666;
+    margin:18px auto 0;
+    color:#64756c;
     line-height:1.7;
 }
 
-/* ================= ABOUT ================= */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
     background:#ffffff;
@@ -303,48 +345,59 @@ body{
 }
 
 .about-text h3{
-    font-size:34px;
+    font-size:36px;
     color:var(--dark-green);
     margin-bottom:20px;
 }
 
 .about-text p{
-    color:#555;
+    color:#63746b;
     line-height:1.8;
     margin-bottom:18px;
 }
 
-.about-highlight{
-    margin-top:25px;
-    padding:22px;
-    border-left:5px solid var(--gold);
-    background:#f5f8f4;
-    font-weight:bold;
-    color:var(--green);
-}
-
 .about-box{
-    background:
-    linear-gradient(135deg,#075b35,#0c7b42);
-    padding:50px;
+    background:linear-gradient(
+        135deg,
+        #075b35,
+        #0b7542
+    );
+
+    padding:45px;
     border-radius:25px;
     color:white;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
+    position:relative;
+    overflow:hidden;
+}
+
+.about-box::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    right:-100px;
+    bottom:-100px;
+    border:50px solid rgba(255,255,255,.08);
+    border-radius:50%;
 }
 
 .about-box h3{
-    font-size:35px;
+    font-size:30px;
     margin-bottom:20px;
 }
 
 .about-box p{
     line-height:1.8;
+    color:#e7f3ed;
 }
 
-/* ================= PRODUCTS ================= */
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .products{
-    background:#f5f8f4;
+    background:var(--light);
 }
 
 .product-grid{
@@ -354,72 +407,137 @@ body{
 }
 
 .product-card{
-    background:white;
-    padding:35px 28px;
-    border-radius:18px;
-    border-top:4px solid var(--gold);
-    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    background:#ffffff;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid #e2ebe5;
     transition:.3s;
 }
 
 .product-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
 }
 
 .product-number{
     font-size:14px;
     color:var(--gold);
     font-weight:bold;
-    letter-spacing:2px;
+    letter-spacing:3px;
+    margin-bottom:25px;
 }
 
 .product-card h3{
-    margin:15px 0;
-    color:var(--dark-green);
     font-size:23px;
+    color:var(--dark-green);
+    margin-bottom:15px;
 }
 
 .product-card p{
-    color:#666;
+    color:#687870;
     line-height:1.7;
 }
 
-/* ================= INDUSTRIES ================= */
+
+/* =========================
+   WHY US
+========================= */
+
+.why{
+    background:#ffffff;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.why-card{
+    padding:35px 25px;
+    text-align:center;
+    border-radius:18px;
+    background:#f6f9f6;
+}
+
+.why-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 22px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    background:#075b35;
+    color:#ffffff;
+
+    font-size:28px;
+    font-weight:bold;
+}
+
+.why-card h3{
+    color:var(--dark-green);
+    margin-bottom:12px;
+}
+
+.why-card p{
+    color:#6b7a72;
+    line-height:1.6;
+    font-size:14px;
+}
+
+
+/* =========================
+   INDUSTRIES
+========================= */
 
 .industries{
-    background:white;
+    background:
+    linear-gradient(
+        120deg,
+        #023c27,
+        #075b35
+    );
+}
+
+.industries .section-title h2{
+    color:#ffffff;
+}
+
+.industries .section-title p{
+    color:#cfe3d9;
 }
 
 .industry-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:20px;
 }
 
 .industry-card{
-    min-height:170px;
-    padding:35px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,.15);
     border-radius:18px;
-    background:#075b35;
-    color:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    background:rgba(255,255,255,.05);
 }
 
 .industry-card h3{
-    color:var(--lime);
-    margin-bottom:12px;
-    font-size:23px;
+    color:#ffffff;
+    margin-bottom:10px;
 }
 
 .industry-card p{
+    color:#c8ddd3;
     line-height:1.6;
-    color:#e7f4ec;
+    font-size:14px;
 }
 
-/* ================= QUALITY ================= */
+
+/* =========================
+   QUALITY
+========================= */
 
 .quality{
     background:#f5f8f4;
@@ -427,83 +545,51 @@ body{
 
 .quality-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.quality-card{
-    background:white;
-    padding:30px 22px;
-    text-align:center;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-}
-
-.quality-card .icon{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:#eaf5df;
-    color:var(--green);
-    display:flex;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
     align-items:center;
-    justify-content:center;
-    margin:0 auto 18px;
-    font-size:25px;
+}
+
+.quality-list{
+    list-style:none;
+}
+
+.quality-list li{
+    padding:18px 0;
+    border-bottom:1px solid #dce5df;
+    color:#56685f;
     font-weight:bold;
 }
 
-.quality-card h3{
-    color:var(--dark-green);
-    margin-bottom:10px;
+.quality-list li::before{
+    content:"✓";
+    color:var(--gold);
+    font-size:20px;
+    font-weight:bold;
+    margin-right:15px;
 }
 
-.quality-card p{
-    color:#666;
-    line-height:1.6;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
-    background:white;
-}
-
-.gallery-box{
-    max-width:950px;
-    margin:auto;
+.quality-box{
+    background:#075b35;
     border-radius:25px;
-    overflow:hidden;
-    background:#f5f5f5;
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    padding:50px;
+    color:#ffffff;
 }
 
-.gallery-box img{
-    width:100%;
-    display:block;
+.quality-box h3{
+    font-size:34px;
+    margin-bottom:20px;
 }
 
-/* ================= CTA ================= */
-
-.cta{
-    background:
-    linear-gradient(120deg,#023c28,#075b35,#0c7b42);
-    color:white;
-    text-align:center;
+.quality-box p{
+    color:#d7e9e0;
+    line-height:1.8;
 }
 
-.cta h2{
-    font-size:48px;
-    margin-bottom:18px;
-}
 
-.cta p{
-    max-width:700px;
-    margin:0 auto 30px;
-    line-height:1.7;
-}
-
-/* ================= CONTACT ================= */
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
     background:#ffffff;
@@ -512,77 +598,132 @@ body{
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
-}
-
-.contact-info{
-    background:#075b35;
-    color:white;
-    padding:45px;
-    border-radius:22px;
-}
-
-.contact-info h3{
-    font-size:32px;
-    margin-bottom:25px;
-    color:var(--lime);
-}
-
-.contact-item{
-    margin-bottom:25px;
-}
-
-.contact-item strong{
-    display:block;
-    color:var(--gold);
-    margin-bottom:7px;
-}
-
-.contact-item p{
-    line-height:1.6;
+    gap:30px;
 }
 
 .contact-box{
-    padding:45px;
-    border:1px solid #ddd;
-    border-radius:22px;
+    padding:40px;
+    background:#f5f8f4;
+    border-radius:20px;
 }
 
 .contact-box h3{
     color:var(--dark-green);
-    font-size:30px;
     margin-bottom:20px;
+    font-size:24px;
 }
 
 .contact-box p{
-    color:#555;
+    color:#62736a;
     line-height:1.8;
+    margin-bottom:10px;
 }
 
-/* ================= FOOTER ================= */
+.contact-box strong{
+    color:#075b35;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
-    background:#022d20;
-    color:white;
+    background:#023c27;
+    color:#ffffff;
+    padding:35px 6%;
     text-align:center;
-    padding:30px 20px;
 }
 
 .footer p{
+    color:#c7ddd2;
     font-size:14px;
-    color:#d5e5dc;
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:900px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1000px){
 
     .navbar{
         padding:15px 5%;
     }
 
     .logo img{
-        width:180px;
+        width:170px;
+    }
+
+    .nav-links{
+        gap:18px;
+    }
+
+    .nav-links a{
+        font-size:11px;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+        padding-top:140px;
+        padding-bottom:70px;
+    }
+
+    .hero-text{
+        text-align:center;
+        padding-right:0;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-image{
+        margin-top:50px;
+    }
+
+    .hero-image img{
+        max-width:600px;
+    }
+
+    .hero-badge{
+        right:5%;
+        bottom:0;
+    }
+
+    .about-grid,
+    .quality-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .industry-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .navbar{
+        padding:12px 5%;
+    }
+
+    .logo img{
+        width:145px;
     }
 
     .nav-links{
@@ -591,92 +732,44 @@ body{
 
     .hero{
         min-height:auto;
-        padding-bottom:80px;
     }
 
-    .hero-content{
-        flex-direction:column;
-        padding-top:170px;
-        text-align:center;
+    .hero-container{
+        padding-top:130px;
+        padding-bottom:60px;
     }
 
-    .hero-text{
-        width:100%;
-        order:1;
-    }
-
-    .hero-image{
-        width:100%;
-        order:2;
-    }
-
-    .hero-image img{
-        max-width:600px;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .hero-badge{
-        width:130px;
-        height:130px;
-        right:5%;
-        bottom:4%;
-    }
-
-    .hero-badge strong{
-        font-size:22px;
+    .hero-small{
+        font-size:12px;
+        letter-spacing:4px;
     }
 
     .hero h1{
         font-size:48px;
-    }
-
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .product-grid,
-    .industry-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .quality-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:600px){
-
-    .logo img{
-        width:155px;
-    }
-
-    .hero-content{
-        padding-top:145px;
-    }
-
-    .hero h1{
-        font-size:42px;
+        letter-spacing:-2px;
     }
 
     .hero-description{
-        font-size:16px;
+        font-size:15px;
+    }
+
+    .hero-image{
+        margin-top:35px;
     }
 
     .hero-badge{
-        width:105px;
-        height:105px;
+        width:110px;
+        height:110px;
+        right:2%;
     }
 
     .hero-badge strong{
-        font-size:18px;
+        font-size:20px;
     }
 
     .hero-badge span{
-        font-size:8px;
+        font-size:7px;
+        letter-spacing:2px;
     }
 
     .section{
@@ -684,39 +777,40 @@ body{
     }
 
     .section-title h2{
-        font-size:35px;
+        font-size:34px;
     }
 
     .product-grid,
+    .why-grid,
     .industry-grid,
-    .quality-grid{
+    .contact-grid{
         grid-template-columns:1fr;
     }
 
     .about-box,
-    .contact-info,
-    .contact-box{
+    .quality-box{
         padding:30px;
     }
 
-    .cta h2{
-        font-size:35px;
-    }
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header class="navbar">
 
     <div class="nav-container">
 
         <a href="#home" class="logo">
-            <img src="/logo.png" alt="Vishnu Packs Logo">
+            <img src="/logo.png" alt="Vishnu Packs">
         </a>
 
         <nav class="nav-links">
@@ -739,23 +833,27 @@ body{
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
-    <div class="hero-content">
+    <div class="hero-container">
+
 
         <div class="hero-text">
 
-            <div class="small-title">
-                VISHNU PACKS
-            </div>
+            <!-- VISHNU PACKS TEXT REMOVED -->
 
             <h1>
                 SMART<br>
-                PACKAGING.<br>
-                <span>STRONGER<br>
-                POSSIBILITIES.</span>
+                PACKAGING.
+                <span>
+                    STRONGER<br>
+                    POSSIBILITIES.
+                </span>
             </h1>
 
             <p class="hero-description">
@@ -779,36 +877,39 @@ body{
         </div>
 
 
+
         <div class="hero-image">
 
             <img
                 src="/hero-product.png"
-                alt="Vishnu Packs Packaging Product"
+                alt="Vishnu Packs Packaging Solutions"
             >
 
+            <div class="hero-badge">
+
+                <strong>PACK</strong>
+
+                <span>
+                    PROTECT · DELIVER
+                </span>
+
+            </div>
+
         </div>
-
-    </div>
-
-
-    <div class="hero-badge">
-
-        <strong>PACK</strong>
-
-        <span>
-            PROTECT · DELIVER
-        </span>
 
     </div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="section about" id="about">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-title">
 
@@ -817,8 +918,9 @@ body{
             <h2>Packaging With Purpose</h2>
 
             <p>
-                Smart packaging solutions built around
-                protection, reliability and stronger possibilities.
+                We focus on reliable packaging solutions that help
+                businesses protect their products and deliver them
+                with confidence.
             </p>
 
         </div>
@@ -833,20 +935,21 @@ body{
                 </h3>
 
                 <p>
-                    Vishnu Packs focuses on dependable packaging
-                    solutions for businesses that need their products
-                    to be packed, protected and delivered safely.
+                    Vishnu Packs is focused on delivering dependable
+                    packaging solutions for businesses that value
+                    protection, strength and presentation.
                 </p>
 
                 <p>
                     Our approach combines practical packaging design,
-                    strength and consistent quality to meet different
-                    industrial requirements.
+                    quality materials and customer-focused service.
                 </p>
 
-                <div class="about-highlight">
-                    PACK · PROTECT · DELIVER
-                </div>
+                <p>
+                    From everyday packaging requirements to customized
+                    solutions, we aim to provide packaging that works
+                    for your business.
+                </p>
 
             </div>
 
@@ -854,13 +957,14 @@ body{
             <div class="about-box">
 
                 <h3>
-                    Stronger Packaging.
+                    PACK • PROTECT • DELIVER
                 </h3>
 
                 <p>
-                    From product protection to transportation,
-                    we aim to provide packaging solutions that
-                    support your business at every stage.
+                    Every package has a purpose.
+                    Our goal is to make that purpose stronger with
+                    dependable packaging solutions designed around
+                    your requirements.
                 </p>
 
             </div>
@@ -872,11 +976,14 @@ body{
 </section>
 
 
-<!-- ================= PRODUCTS ================= -->
+
+<!-- =========================
+     PRODUCTS
+========================= -->
 
 <section class="section products" id="products">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-title">
 
@@ -885,8 +992,8 @@ body{
             <h2>Packaging Solutions</h2>
 
             <p>
-                Flexible packaging solutions designed for
-                different product and business requirements.
+                Practical packaging solutions designed for strength,
+                protection and reliable handling.
             </p>
 
         </div>
@@ -894,76 +1001,114 @@ body{
 
         <div class="product-grid">
 
-            <div class="product-card">
-                <div class="product-number">01</div>
 
-                <h3>Corrugated Boxes</h3>
+            <div class="product-card">
+
+                <div class="product-number">
+                    01
+                </div>
+
+                <h3>
+                    Corrugated Boxes
+                </h3>
 
                 <p>
                     Strong and dependable corrugated packaging
-                    suitable for storage, handling and transportation.
+                    solutions for a wide range of applications.
                 </p>
+
             </div>
 
 
             <div class="product-card">
-                <div class="product-number">02</div>
 
-                <h3>Industrial Packaging</h3>
+                <div class="product-number">
+                    02
+                </div>
+
+                <h3>
+                    Heavy Duty Packaging
+                </h3>
 
                 <p>
-                    Packaging solutions designed to support
-                    industrial products during handling and movement.
+                    Packaging solutions designed for demanding
+                    products and transportation requirements.
                 </p>
+
             </div>
 
 
             <div class="product-card">
-                <div class="product-number">03</div>
 
-                <h3>Customized Packaging</h3>
+                <div class="product-number">
+                    03
+                </div>
+
+                <h3>
+                    Customized Boxes
+                </h3>
 
                 <p>
-                    Packaging designed around your product dimensions,
-                    protection requirements and application.
+                    Packaging developed around your product size,
+                    handling and protection requirements.
                 </p>
+
             </div>
 
 
             <div class="product-card">
-                <div class="product-number">04</div>
 
-                <h3>Heavy Duty Packaging</h3>
+                <div class="product-number">
+                    04
+                </div>
+
+                <h3>
+                    Industrial Packaging
+                </h3>
 
                 <p>
-                    Robust packaging solutions for products requiring
-                    additional strength and protection.
+                    Reliable packaging solutions for industrial
+                    products and supply-chain applications.
                 </p>
+
             </div>
 
 
             <div class="product-card">
-                <div class="product-number">05</div>
 
-                <h3>Pallet Packaging</h3>
+                <div class="product-number">
+                    05
+                </div>
+
+                <h3>
+                    Pallet Packaging
+                </h3>
 
                 <p>
-                    Packaging solutions suitable for palletized products,
-                    storage and transportation.
+                    Packaging solutions suitable for palletized
+                    storage, movement and transportation.
                 </p>
+
             </div>
 
 
             <div class="product-card">
-                <div class="product-number">06</div>
 
-                <h3>Special Packaging</h3>
+                <div class="product-number">
+                    06
+                </div>
+
+                <h3>
+                    Special Packaging
+                </h3>
 
                 <p>
-                    Application-focused packaging solutions developed
-                    for specific handling and protection needs.
+                    Flexible packaging solutions for specific
+                    product and customer requirements.
                 </p>
+
             </div>
+
 
         </div>
 
@@ -972,21 +1117,124 @@ body{
 </section>
 
 
-<!-- ================= INDUSTRIES ================= -->
+
+<!-- =========================
+     WHY VISHNU PACKS
+========================= -->
+
+<section class="section why">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>WHY VISHNU PACKS</small>
+
+            <h2>Built Around Your Needs</h2>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    01
+                </div>
+
+                <h3>
+                    Strength
+                </h3>
+
+                <p>
+                    Packaging designed to provide dependable
+                    protection during handling and movement.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    02
+                </div>
+
+                <h3>
+                    Reliability
+                </h3>
+
+                <p>
+                    Consistent packaging solutions focused on
+                    practical business requirements.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    03
+                </div>
+
+                <h3>
+                    Customization
+                </h3>
+
+                <p>
+                    Packaging options developed according to
+                    product and application requirements.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    04
+                </div>
+
+                <h3>
+                    Service
+                </h3>
+
+                <p>
+                    Customer-focused support from requirement
+                    understanding to packaging delivery.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INDUSTRIES
+========================= -->
 
 <section class="section industries" id="industries">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-title">
 
             <small>INDUSTRIES WE SERVE</small>
 
-            <h2>Built For Business</h2>
+            <h2>Packaging For Business</h2>
 
             <p>
-                Packaging support for a wide range of
-                industrial and commercial requirements.
+                Packaging solutions can be adapted for different
+                products, industries and handling requirements.
             </p>
 
         </div>
@@ -994,58 +1242,90 @@ body{
 
         <div class="industry-grid">
 
+
             <div class="industry-card">
-                <h3>Engineering</h3>
+
+                <h3>
+                    Manufacturing
+                </h3>
+
                 <p>
-                    Protective packaging for engineering
-                    and industrial components.
+                    Strong packaging for manufactured components
+                    and finished products.
                 </p>
+
             </div>
 
 
             <div class="industry-card">
-                <h3>Automotive</h3>
+
+                <h3>
+                    Engineering
+                </h3>
+
                 <p>
-                    Reliable packaging for automotive parts
+                    Packaging solutions for engineering products,
+                    equipment and components.
+                </p>
+
+            </div>
+
+
+            <div class="industry-card">
+
+                <h3>
+                    Automotive
+                </h3>
+
+                <p>
+                    Packaging support for automotive parts and
+                    industrial components.
+                </p>
+
+            </div>
+
+
+            <div class="industry-card">
+
+                <h3>
+                    Electrical
+                </h3>
+
+                <p>
+                    Protective packaging for electrical products
                     and components.
                 </p>
+
             </div>
 
 
             <div class="industry-card">
-                <h3>Manufacturing</h3>
+
+                <h3>
+                    Electronics
+                </h3>
+
                 <p>
-                    Practical packaging solutions for
-                    manufactured products.
+                    Packaging designed around handling and
+                    protection requirements.
                 </p>
+
             </div>
 
 
             <div class="industry-card">
-                <h3>Machinery</h3>
+
+                <h3>
+                    General Industries
+                </h3>
+
                 <p>
-                    Packaging designed for safe handling
-                    of machinery and equipment.
+                    Flexible packaging solutions for varied
+                    business and industrial applications.
                 </p>
+
             </div>
 
-
-            <div class="industry-card">
-                <h3>Electronics</h3>
-                <p>
-                    Packaging focused on product protection
-                    during movement and storage.
-                </p>
-            </div>
-
-
-            <div class="industry-card">
-                <h3>General Industry</h3>
-                <p>
-                    Flexible packaging support for
-                    different business requirements.
-                </p>
-            </div>
 
         </div>
 
@@ -1054,82 +1334,71 @@ body{
 </section>
 
 
-<!-- ================= QUALITY ================= -->
+
+<!-- =========================
+     QUALITY
+========================= -->
 
 <section class="section quality" id="quality">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-title">
 
-            <small>WHY VISHNU PACKS</small>
+            <small>QUALITY</small>
 
-            <h2>Quality You Can Trust</h2>
-
-            <p>
-                Our packaging philosophy is built around
-                strength, consistency and dependable service.
-            </p>
+            <h2>Quality You Can Depend On</h2>
 
         </div>
 
 
         <div class="quality-grid">
 
-            <div class="quality-card">
 
-                <div class="icon">✓</div>
+            <div>
 
-                <h3>Strong</h3>
+                <ul class="quality-list">
 
-                <p>
-                    Packaging designed with product protection
-                    and handling in mind.
-                </p>
+                    <li>
+                        Strong packaging construction
+                    </li>
 
-            </div>
+                    <li>
+                        Reliable material selection
+                    </li>
 
+                    <li>
+                        Product-focused packaging
+                    </li>
 
-            <div class="quality-card">
+                    <li>
+                        Practical customized solutions
+                    </li>
 
-                <div class="icon">✓</div>
+                    <li>
+                        Customer-focused service
+                    </li>
 
-                <h3>Reliable</h3>
-
-                <p>
-                    Consistent solutions for regular
-                    packaging requirements.
-                </p>
-
-            </div>
-
-
-            <div class="quality-card">
-
-                <div class="icon">✓</div>
-
-                <h3>Flexible</h3>
-
-                <p>
-                    Packaging options suitable for
-                    different applications.
-                </p>
+                </ul>
 
             </div>
 
 
-            <div class="quality-card">
+            <div class="quality-box">
 
-                <div class="icon">✓</div>
-
-                <h3>Professional</h3>
+                <h3>
+                    Pack With Confidence
+                </h3>
 
                 <p>
-                    Focused on quality, communication
-                    and customer requirements.
+                    Our objective is simple — provide packaging
+                    solutions that protect products, support
+                    transportation and create confidence at every
+                    stage of delivery.
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1138,76 +1407,20 @@ body{
 </section>
 
 
-<!-- ================= GALLERY ================= -->
 
-<section class="section gallery">
-
-    <div class="section-container">
-
-        <div class="section-title">
-
-            <small>PACKAGING IN ACTION</small>
-
-            <h2>Our Packaging</h2>
-
-            <p>
-                A glimpse of the packaging solutions
-                offered by Vishnu Packs.
-            </p>
-
-        </div>
-
-
-        <div class="gallery-box">
-
-            <img
-                src="/hero-product.png"
-                alt="Vishnu Packs Corrugated Packaging"
-            >
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="section cta">
-
-    <div class="section-container">
-
-        <h2>
-            Ready For Stronger Packaging?
-        </h2>
-
-        <p>
-            Talk to Vishnu Packs about your packaging
-            requirement and discover a practical solution
-            for your business.
-        </p>
-
-        <a href="#contact" class="btn-primary">
-            GET A QUOTE
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section class="section contact" id="contact">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-title">
 
-            <small>CONTACT US</small>
+            <small>GET IN TOUCH</small>
 
-            <h2>Let's Talk Packaging</h2>
+            <h2>Let's Discuss Your Packaging</h2>
 
             <p>
                 Have a packaging requirement?
@@ -1219,46 +1432,21 @@ body{
 
         <div class="contact-grid">
 
-            <div class="contact-info">
+
+            <div class="contact-box">
 
                 <h3>
                     Vishnu Packs
                 </h3>
 
+                <p>
+                    <strong>Address</strong><br>
 
-                <div class="contact-item">
-
-                    <strong>ADDRESS</strong>
-
-                    <p>
-                        S.f.no.529/1, Velliyankadu,<br>
-                        Behind LMW Unit II,<br>
-                        Kaniyur, Coimbatore - 641 659.
-                    </p>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>EMAIL</strong>
-
-                    <p>
-                        vishnupacks.sps@gmail.com
-                    </p>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>WEBSITE</strong>
-
-                    <p>
-                        www.vishnupacks.com
-                    </p>
-
-                </div>
+                    S.f.no.529/1, Velliyankadu,<br>
+                    Behind LMW Unit II,<br>
+                    Kaniyur,<br>
+                    Coimbatore - 641 659.
+                </p>
 
             </div>
 
@@ -1266,25 +1454,26 @@ body{
             <div class="contact-box">
 
                 <h3>
-                    PACK · PROTECT · DELIVER
+                    Contact Information
                 </h3>
 
                 <p>
-                    Have a packaging requirement?
-                    Get in touch with Vishnu Packs
-                    to discuss your packaging needs.
+                    <strong>Email</strong><br>
+                    vishnupacks.sps@gmail.com
                 </p>
 
-                <br>
+                <p>
+                    <strong>Website</strong><br>
+                    www.vishnupacks.com
+                </p>
 
-                <a
-                    href="mailto:vishnupacks.sps@gmail.com"
-                    class="btn-primary"
-                >
-                    EMAIL US
-                </a>
+                <p>
+                    <strong>Tagline</strong><br>
+                    PACK • PROTECT • DELIVER
+                </p>
 
             </div>
+
 
         </div>
 
@@ -1293,12 +1482,16 @@ body{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
 
     <p>
-        © 2026 Vishnu Packs. We care in every Pack.
+        © 2026 Vishnu Packs.
+        We care in every Pack.
     </p>
 
 </footer>
