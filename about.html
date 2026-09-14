@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Vishnu Packs</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f3e9;
+    color:#064f3b;
+}
+
+/* HEADER */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    z-index:10;
+}
+
+.logo img{
+    width:300px;
+    height:auto;
+    display:block;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:38px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#064f3b;
+    font-size:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#eaaa00;
+}
+
+.quote-btn{
+    background:#eaaa00;
+    color:#064f3b;
+    padding:16px 30px;
+    border-radius:30px;
+}
+
+/* ABOUT HERO */
+
+.about-hero{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    padding:150px 8% 80px;
+    background:#f7f3e9;
+}
+
+.about-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:url("hero-bg.png");
+    background-size:cover;
+    background-position:center;
+    opacity:0.5;
+    z-index:0;
+}
+
+.about-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+}
+
+.small-title{
+    display:inline-block;
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#e2a500;
+    margin-bottom:20px;
+}
+
+.about-content h1{
+    font-size:64px;
+    line-height:1.05;
+    font-weight:800;
+    color:#07553f;
+    margin-bottom:25px;
+}
+
+.about-content h1 span{
+    color:#86d900;
+}
+
+.about-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#174f46;
+    margin-bottom:20px;
+    max-width:650px;
+}
+
+/* RIGHT DESIGN */
+
+.about-circle{
+    position:absolute;
+    right:8%;
+    top:22%;
+    width:430px;
+    height:430px;
+    border:25px solid rgba(120,170,60,0.12);
+    border-radius:50%;
+    z-index:1;
+}
+
+.about-circle::before{
+    content:"";
+    position:absolute;
+    inset:45px;
+    border:18px solid rgba(120,170,60,0.10);
+    border-radius:50%;
+}
+
+.pack-box{
+    position:absolute;
+    right:10%;
+    bottom:8%;
+    width:430px;
+    padding:35px;
+    background:rgba(255,255,255,0.88);
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.10);
+    z-index:3;
+}
+
+.pack-box h2{
+    color:#07553f;
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.pack-box p{
+    font-size:15px;
+    line-height:1.6;
+    color:#45645c;
+}
+
+/* VALUES */
+
+.values{
+    padding:90px 8%;
+    background:#ffffff;
+    text-align:center;
+}
+
+.values h2{
+    font-size:42px;
+    color:#07553f;
+    margin-bottom:50px;
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.value-card{
+    padding:40px 30px;
+    border-radius:20px;
+    background:#f7f3e9;
+    border-top:5px solid #eaaa00;
+}
+
+.value-card h3{
+    color:#07553f;
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.value-card p{
+    color:#536b64;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    background:#064f3b;
+    color:white;
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    header{
+        height:auto;
+        padding:20px 5%;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .logo img{
+        width:240px;
+    }
+
+    nav{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .about-hero{
+        padding:230px 7% 80px;
+        min-height:auto;
+    }
+
+    .about-content h1{
+        font-size:45px;
+    }
+
+    .about-circle,
+    .pack-box{
+        display:none;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Vishnu Packs">
+    </a>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="index.html#products">PRODUCTS</a>
+        <a href="index.html#industries">INDUSTRIES</a>
+        <a href="index.html#quality">QUALITY</a>
+        <a href="index.html#contact">CONTACT</a>
+        <a href="index.html#contact" class="quote-btn">GET A QUOTE</a>
+    </nav>
+
+</header>
+
+
+<section class="about-hero">
+
+    <div class="about-circle"></div>
+
+    <div class="about-content">
+
+        <div class="small-title">
+            ABOUT VISHNU PACKS
+        </div>
+
+        <h1>
+            PACKAGING WITH
+            <span>PURPOSE.</span>
+        </h1>
+
+        <p>
+            Vishnu Packs is committed to delivering reliable
+            and innovative packaging solutions designed to
+            protect products and support businesses across
+            industries.
+        </p>
+
+        <p>
+            With a strong focus on quality, durability and
+            customer requirements, we create packaging
+            solutions that are practical, dependable and
+            built for every journey.
+        </p>
+
+        <p>
+            Our approach is simple — pack better, protect
+            better and deliver with confidence.
+        </p>
+
+    </div>
+
+    <div class="pack-box">
+
+        <h2>WE CARE IN EVERY PACK</h2>
+
+        <p>
+            From everyday packaging needs to demanding
+            industrial applications, Vishnu Packs focuses
+            on creating solutions that combine strength,
+            protection and reliability.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="values">
+
+    <h2>OUR CORE VALUES</h2>
+
+    <div class="value-grid">
+
+        <div class="value-card">
+            <h3>QUALITY</h3>
+            <p>
+                We focus on dependable packaging quality
+                for consistent performance.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <h3>RELIABILITY</h3>
+            <p>
+                Packaging solutions designed to protect
+                products throughout their journey.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <h3>CUSTOMER FOCUS</h3>
+            <p>
+                We understand requirements and work toward
+                practical packaging solutions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Vishnu Packs. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
