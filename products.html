@@ -107,6 +107,23 @@ body{
     background:#07563d;
 }
 
+/* BACK TO HOME */
+.back-home{
+    text-decoration:none;
+    color:#07563d;
+    font-size:14px;
+    font-weight:800;
+    border:2px solid #07563d;
+    border-radius:30px;
+    padding:11px 24px;
+    transition:0.3s ease;
+}
+
+.back-home:hover{
+    background:#07563d;
+    color:#fff;
+}
+
 /* TITLE */
 .title-row{
     display:flex;
@@ -493,10 +510,16 @@ body{
             <img src="logo.png" alt="Vishnu Packs">
         </a>
 
-        <div class="top-right">
-            <span>PACK</span>
-            <span>PROTECT</span>
-            <span>DELIVER</span>
+        <div style="display:flex; align-items:center; gap:30px;">
+            <div class="top-right">
+                <span>PACK</span>
+                <span>PROTECT</span>
+                <span>DELIVER</span>
+            </div>
+
+            <a href="index.html" class="back-home">
+                ← BACK TO HOME
+            </a>
         </div>
 
     </header>
